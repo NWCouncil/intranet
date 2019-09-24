@@ -1,0 +1,10 @@
+﻿@{
+    // 9/24/19: Sample code to create a PDF file from an HTML string. (Not shown: code to display HTML form to collect leave report data, which then 
+    // gets included as part of the html string.)
+
+    // Uses itext.Html2pdf converter (v2.1.5) per APGPL license.
+
+    string html = "<!doctype html><html><body><p> (skipping the code which converts form data to an HTML string) </p></body></html>";
+    string pdfFile = @"{foldername}\temp.pdf";
+    iText.Html2pdf.HtmlConverter.ConvertToPdf(html, new System.IO.FileStream(pdfFile, FileMode.Create));
+}
